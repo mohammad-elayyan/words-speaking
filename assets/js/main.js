@@ -14,7 +14,9 @@ if ("webkitSpeechRecognition" in window) {
   let grade = 0;
   let trials = 2;
   let words = ["Hello", "How are you", "Thank you"];
-  initRec();
+  window.onload = () => {
+    initRec();
+  };
 
   function initRec(reset = false) {
     if (reset) {
