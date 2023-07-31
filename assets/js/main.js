@@ -3,6 +3,8 @@ const gradeBox = document.querySelector(".grade");
 const texts = document.querySelector(".texts");
 const speak = document.querySelector(".start");
 setGrade(0);
+let words = ["Hello", "How are you", "Thank you"];
+  initRec();
 
 if ("webkitSpeechRecognition" in window) {
   var recognition = new webkitSpeechRecognition();
@@ -13,8 +15,6 @@ if ("webkitSpeechRecognition" in window) {
   let c = 0;
   let grade = 0;
   let trials = 2;
-  let words = ["Hello", "How are you", "Thank you"];
-  initRec();
 
   function initRec(reset = false) {
     if (reset) {
