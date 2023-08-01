@@ -19,7 +19,10 @@ section {
     width: 100%;
     background-color: rgb(37, 37, 37);
 }
-
+form {
+    color: #fff;
+    margin-top: 2vw;
+}
 section .main,
 section .grade {
     display: flex;
