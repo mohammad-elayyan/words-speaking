@@ -2,6 +2,7 @@ const mainBox = document.querySelector(".main");
 const gradeBox = document.querySelector(".grade");
 const texts = document.querySelector(".texts");
 const speak = document.querySelector(".start");
+const trialsVal = document.querySelector("#trials");
 setGrade(0);
 
 if ("webkitSpeechRecognition" in window) {
@@ -12,16 +13,20 @@ if ("webkitSpeechRecognition" in window) {
   let result = document.createElement("p");
   let c = 0;
   let grade = 0;
-  let trials = 2;
-  let words = ["Hello", "How are you", "Thank you"];
+  let trials = trialsVal.value;
+  let words = ["Teacher reads exercise one"];
   window.onload = () => {
     initRec();
+  };
+
+  trialsVal.onchange = () => {
+    trials = trialsVal.value;
   };
 
   function initRec(reset = false) {
     if (reset) {
       c = 0;
-      trials = 2;
+      trials = trialsVal.value;
       grade = 0;
     }
     if (c === 0) {
@@ -39,7 +44,7 @@ if ("webkitSpeechRecognition" in window) {
             texts.children[1].innerText = "";
             texts.children[2].innerText = "";
           }, 1000);
-          trials = 2;
+          trials = trialsVal.value;
         }
         return w;
       });
@@ -51,6 +56,7 @@ if ("webkitSpeechRecognition" in window) {
     for (let i = e.resultIndex; i < e.results.length; ++i) {
       if (e.results[i].isFinal) {
         text += e.results[i][0].transcript;
+        console.log(e.results[i][0].transcript);
       }
     }
     // const text = Array.from(e.results)
@@ -62,8 +68,8 @@ if ("webkitSpeechRecognition" in window) {
 
     if (e.results[0].isFinal) {
       if (
-        text.includes(texts.children[0].innerText.toLowerCase()) ||
-        text.includes(capitalize(texts.children[0].innerText))
+        text === texts.children[0].innerText.toLowerCase() ||
+        text === capitalize(texts.children[0].innerText)
       ) {
         initRec();
         result = document.createElement("p");
@@ -85,7 +91,7 @@ if ("webkitSpeechRecognition" in window) {
           initRec();
           c++;
           setTimeout(() => {
-            if (c >= words.length) {
+            if (c > words.length) {
               showReult("none", "flex");
             }
           }, 1000);
