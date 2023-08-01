@@ -16,6 +16,7 @@ if ("webkitSpeechRecognition" in window) {
   let trials = trialsVal.value;
   let words = ["Hello", "How are you", "Thank you"];
   window.onload = () => {
+    texts.children[0].innerText = words[c];
     initRec();
   };
 
