@@ -108,7 +108,8 @@ if ("webkitSpeechRecognition" in window) {
     }
   });
   if (window.matchMedia("(pointer: coarse)").matches) {
-    speak.addEventListener("touchstart", () => {
+    speak.addEventListener("touchstart", (e) => {
+      e.preventDefault();
       const r = document.querySelectorAll(".result");
       r.forEach((el) => el.remove());
       recognition.start();
