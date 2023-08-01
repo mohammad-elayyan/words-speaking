@@ -14,7 +14,7 @@ if ("webkitSpeechRecognition" in window) {
   let c = 0;
   let grade = 0;
   let trials = trialsVal.value;
-  let words = ["Teacher reads exercise one"];
+  let words = ["Hello", "How are you", "Thank you"];
   window.onload = () => {
     initRec();
   };
@@ -56,7 +56,6 @@ if ("webkitSpeechRecognition" in window) {
     for (let i = e.resultIndex; i < e.results.length; ++i) {
       if (e.results[i].isFinal) {
         text += e.results[i][0].transcript;
-        console.log(e.results[i][0].transcript);
       }
     }
     // const text = Array.from(e.results)
