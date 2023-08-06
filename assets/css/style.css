@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    color: #22224C;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+p {
+    user-select: initial;
+}
+
+html {
+    font-family: 'Montserrat';
+    font-size: 1.6vw;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+section .main,
+section .grade {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    align-items: center;
+    user-select: none;
+}
+
+form {
+    /* color: #fff; */
+    margin-top: 2vw;
+}
+
+section .grade {
+    /* color: #fff; */
+    display: none;
+}
+
+section .grade p {
+    margin: .5vw 0;
+}
+
+section .grade button {
+    padding: .2vw .4vw;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+section .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .cards .card {
+    background-color: transparent;
+    border: 0;
+    /* width: 20.8vw !important; */
+    cursor: pointer;
+}
+
+section .cards .card .card-body {
+    position: relative;
+}
+
+section .cards .volume-btn {
+    width: 3vw;
+    position: absolute;
+    top: 2.3vw;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    pointer-events: initial !important;
+}
+
+section .grade button:hover {
+    background-color: #d5d5d5;
+}
+
+.splide__pagination {
+    bottom: -1em;
+}
+
+section .texts i {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: .4vw .22vw;
+    border-radius: 100%;
+    transition: all .2s ease;
+}
+
+section .texts i:hover {
+    background-color: rgba(37, 37, 37, .2);
+}
+
+section .card p {
+    /* color: rgba(255, 255, 255, 0.322); */
+    width: 100%;
+    text-align: center;
+    /* font-size: 50px; */
+    margin: 1vw auto;
+}
+
+section .card .active-p {
+    background-color: rgba(103, 89, 179, .5);
+}
+
+section .start {
+    width: 4.1vw;
+    position: relative;
+    text-align: center;
+    color: #6759b3;
+    /* margin-top: 50px;
+    margin-bottom: 30px; */
+    /* background-color: rgba(255, 255, 255, 0.322); */
+    padding: 0.6vw 1.2vw;
+    outline: none;
+    border: 1px solid rgb(103, 89, 179);
+    border-radius: 100%;
+    transition: all .4s ease;
+    z-index: 1;
+    cursor: pointer;
+    float: right;
+}
+
+
+section .start.an-s::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #6759b3;
+    border-radius: 50%;
+    z-index: -1;
+    animation-name: breathe;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+section .start.an-s::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: 1px solid #6759b3;
+    border-radius: 50%;
+    z-index: -1;
+    animation-name: breathe-wide;
+    animation-duration: 1.8s;
+    animation-delay: .9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+section .start i {
+    user-select: none !important;
+}
+
+section .start:hover {
+    background-color: rgba(103, 89, 179, 0.2);
+}
+
+section .container {
+    width: 90%;
+    max-width: 8 00px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+section .user p {
+    width: 75%;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+section .user {
+    color: #000;
+    text-align: left;
+    background-color: #F4F6F6;
+    width: 35%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5vw;
+    font-size: 1.4vw;
+}
+
+section .hide {
+    display: none;
+}
+
+.splide__pagination__page.is-active {
+    background-color: #F4F6F6;
+}
+
+.splide__pagination__page {
+    background-color: #6759b3;
+}
+
+.result {
+    text-align: center;
+    background-color: transparent;
+}
+
+.result.correct {
+    color: green;
+}
+
+.result.wrong {
+    color: red;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.12);
+        opacity: 0;
+    }
+}
+
+@keyframes breathe-wide {
+    0% {
+        transform: scale(1.12);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.22);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.22);
+        opacity: 0;
+    }
+}
