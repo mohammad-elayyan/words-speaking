@@ -128,7 +128,7 @@ if ("webkitSpeechRecognition" in window) {
 
     if (e.results[0].isFinal) {
       if (
-        text.toLowerCase() === orginalWord ||
+        text.toLowerCase() === orginalWord.toLowerCase() ||
         capitalize(text) === capitalize(orginalWord)
       ) {
         initRec();
