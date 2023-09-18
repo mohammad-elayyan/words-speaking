@@ -87,6 +87,7 @@ section .grade button:hover {
 
 .splide__pagination {
     bottom: -1em;
+    gap: 1.5vw;
 }
 
 section .texts i {
