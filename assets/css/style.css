@@ -210,11 +210,11 @@ section .hide {
 }
 
 .splide__pagination__page.is-active {
-    background-color: #F4F6F6;
+    background-color: #6759b3;
 }
 
 .splide__pagination__page {
-    background-color: #6759b3;
+    background-color: #c8c8c8;
 }
 
 .result {
